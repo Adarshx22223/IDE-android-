@@ -1,0 +1,11 @@
+<TabView androidTabsPosition="bottom" class="bg-gray-100 dark:bg-gray-900">
+    <TabViewItem title="Editor" iconSource="res://icon_editor">
+        <Frame defaultPage="components/editor-page" />
+    </TabViewItem>
+    <TabViewItem title="Files" iconSource="res://icon_files">
+        <Frame defaultPage="components/file-explorer-page" />
+    </TabViewItem>
+    <TabViewItem title="Terminal" iconSource="res://icon_terminal">
+        <Frame defaultPage="components/terminal-page" />
+    </TabViewItem>
+</TabView>

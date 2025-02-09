@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100 dark:bg-gray-900">
+    <ActionBar title="Terminal" class="bg-white dark:bg-gray-800" />
+    
+    <GridLayout rows="*, auto">
+        <!-- Terminal Output -->
+        <ScrollView row="0">
+            <Label text="{{ output }}" textWrap="true" class="p-4 font-mono text-sm text-gray-900 dark:text-gray-100" />
+        </ScrollView>
+
+        <!-- Command Input -->
+        <GridLayout row="1" columns="*, auto" class="p-2 bg-gray-200 dark:bg-gray-700">
+            <TextField col="0" 
+                      text="{{ command }}" 
+                      hint="Enter command..." 
+                      returnKeyType="send"
+                      returnPress="onExecuteCommand"
+                      class="p-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" />
+            <Button col="1" 
+                    text="Run" 
+                    tap="onExecuteCommand"
+                    class="ml-2 bg-blue-600 text-white" />
+        </GridLayout>
+    </GridLayout>
+</Page>

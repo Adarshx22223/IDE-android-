@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100 dark:bg-gray-900">
+    <ActionBar title="Android IDE" class="bg-white dark:bg-gray-800">
+        <ActionItem tap="onNewFile" ios.position="right" android.position="actionBar">
+            <Label text="New" class="text-blue-600 dark:text-blue-400" />
+        </ActionItem>
+        <ActionItem tap="onSaveFile" ios.position="right" android.position="actionBar">
+            <Label text="Save" class="text-blue-600 dark:text-blue-400" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="*, auto">
+        <!-- Main Editor Area -->
+        <TextView row="0" 
+                 text="{{ content }}" 
+                 class="p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                 textChange="onTextChanged"
+                 autocorrect="false"
+                 autocapitalizationType="none"
+                 keyboardType="email" />
+
+        <!-- Bottom Toolbar -->
+        <StackLayout row="1" orientation="horizontal" class="p-2 bg-gray-200 dark:bg-gray-700">
+            <Label text="{{ filename }}" class="text-sm text-gray-600 dark:text-gray-300" />
+            <Label text="{{ language }}" class="ml-2 text-sm text-blue-600 dark:text-blue-400" />
+        </StackLayout>
+    </GridLayout>
+</Page>

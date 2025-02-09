@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100 dark:bg-gray-900">
+    <ActionBar title="File Explorer" class="bg-white dark:bg-gray-800">
+        <ActionItem tap="onRefresh" ios.position="right" android.position="actionBar">
+            <Label text="Refresh" class="text-blue-600 dark:text-blue-400" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto, *">
+        <!-- Current Path -->
+        <Label row="0" 
+               text="{{ currentPath }}" 
+               class="p-2 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300" />
+
+        <!-- File List -->
+        <ListView row="1" 
+                 items="{{ files }}" 
+                 itemTap="onFileTap"
+                 class="bg-white dark:bg-gray-800">
+            <ListView.itemTemplate>
+                <Label text="{{ $value }}" 
+                       class="p-4 text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-700" />
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>
